@@ -32,6 +32,8 @@ export default class App extends React.Component {
               onInput={this.validateUsername}
             />
           </label>
+          {!isUsernameValid ? <label className="error">{ERRORS.username.message}</label> : null}
+
           <label for="password">
             <span className="label-star">*</span> Password:
             <input
@@ -42,6 +44,7 @@ export default class App extends React.Component {
               onInput={this.validatePassword}
             />
           </label>
+          {!isPasswordValid ? <label className="error">{ERRORS.password.message}</label> : null}
           <button type="submit">Register</button>
         </form>
       </div>
