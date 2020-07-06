@@ -5,6 +5,10 @@ import { ERRORS } from './constants';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isUsernameValid: false,
+      isPasswordValid: false
+    }
   }
 
   render() {
