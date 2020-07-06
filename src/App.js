@@ -11,6 +11,15 @@ export default class App extends React.Component {
     }
   }
 
+  validateUsername = () => {
+    var username = document.getElementById('username').value
+    this.setState({isUsernameValid: ERRORS.username.regex.test(username)})
+  }
+  validatePassword = () => {
+    var password = document.getElementById('password').value
+    this.setState({isPasswordValid: ERRORS.password.regex.test(password)})
+  }
+
   render() {
     const {isUsernameValid, isPasswordValid} = this.state
     return (
@@ -51,3 +60,4 @@ export default class App extends React.Component {
     );
   }
 }
+
