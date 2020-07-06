@@ -12,6 +12,7 @@ export default class App extends React.Component {
   }
 
   render() {
+    const {isUsernameValid, isPasswordValid} = this.state
     return (
       <div className="App">
         <div className="logo">
@@ -28,7 +29,7 @@ export default class App extends React.Component {
               name="username"
               placeholder="6~10 characters"
               type="text"
-              noValidate
+              onInput={this.validateUsername}
             />
           </label>
           <label for="password">
@@ -38,7 +39,7 @@ export default class App extends React.Component {
               name="password"
               placeholder="6~10 numbers"
               type="password"
-              noValidate
+              onInput={this.validatePassword}
             />
           </label>
           <button type="submit">Register</button>
